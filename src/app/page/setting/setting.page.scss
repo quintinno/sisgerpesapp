@@ -1,0 +1,33 @@
+.titulo {
+    margin-left: -30%;
+}
+
+.titulo-setting {
+    color: var(--ion-color-pes-text-primary);
+    margin-top: 40px;
+}
+
+.item-setting {
+    background: var(--ion-color-pes-text-background-secondary);
+    min-height: 60px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    ion-icon {
+        color: var(--ion-color-pes-text-icon);
+        width: 20%;
+    }
+    ion-icon:nth-child(1) {
+        font-size: 26px;
+    }
+    b {
+        // border: red dashed 1px;
+        width: 90%;
+    }
+    ion-icon:nth-child(3) {
+        font-size: 20px;
+    }
+}

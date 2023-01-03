@@ -1,8 +1,13 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-/** Ionic CSS Variables **/
 :root {
+
+  /** custom **/
+  --ion-color-pes: #141A1F;
+	--ion-color-pes-text-primary: #818E9C;
+  --ion-color-pes-text-secondary: #F6F8FA;
+  --ion-color-pes-text-icon: #B5C7FA;
+  --ion-color-pes-text-background-primary: #39485C;
+  --ion-color-pes-text-background-secondary: #202934;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -77,11 +82,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  /*
-   * Dark Colors
-   * -------------------------------------------
-   */
-
   body {
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;

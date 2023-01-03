@@ -2,17 +2,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ProfilePageRoutingModule } from './profile-routing.module';
-import { ProfilePage } from './profile.page';
+import { PersonCreatePageRoutingModule } from './person-create-routing.module';
+import { PersonCreatePage } from './person-create.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule,
-    ReactiveFormsModule
+    PersonCreatePageRoutingModule,
+    ReactiveFormsModule,
   ],
-  declarations: [ProfilePage]
+  declarations: [PersonCreatePage]
 })
-export class ProfilePageModule {}
+export class PersonCreatePageModule {}

@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline" routerLink="/setting"></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Create</ion-title>
+
+    <ion-buttons slot="end" (click)="create()">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formBuilderGroup">
+
+    <div class="container">
+
+      <div class="item-profile">
+        <ion-text>Firt Name</ion-text>
+        <ion-input></ion-input>
+      </div>
+
+      <div class="item-profile">
+        <ion-text>Last Name</ion-text>
+        <ion-input></ion-input>
+      </div>
+
+      <div class="item-profile">
+        <ion-text>E-mail</ion-text>
+        <ion-input></ion-input>
+      </div>
+
+      <div class="item-profile">
+        <ion-text>Phone</ion-text>
+        <ion-input (ionInput)="onChangeFormatarPhone($event)" maxlength="19" placeholder="+55 (XXX) YYY-YYY-YYY"></ion-input>
+      </div>
+
+    </div>
+
+  </form>
+
+</ion-content>

@@ -18,36 +18,40 @@
 
 <ion-content>
 
-  <div class="container">
+  <form [formGroup]="formBuilderGroup">
 
-    <div class="container-profile">
-      <div class="profile-user-icon">
-        <ion-text>DQ</ion-text>
+    <div class="container">
+
+      <div class="container-profile">
+        <div class="profile-user-icon">
+          <ion-text>DQ</ion-text>
+        </div>
       </div>
+      <ion-text>
+        Change profile picture
+      </ion-text>
     </div>
-    <ion-text>
-      Change profile picture
-    </ion-text>
-  </div>
 
-  <div class="item-profile">
-    <ion-text>Firt Name</ion-text>
-    <ion-input></ion-input>
-  </div>
+    <div class="item-profile">
+      <ion-text>Firt Name</ion-text>
+      <ion-input></ion-input>
+    </div>
 
-  <div class="item-profile">
-    <ion-text>Last Name</ion-text>
-    <ion-input></ion-input>
-  </div>
+    <div class="item-profile">
+      <ion-text>Last Name</ion-text>
+      <ion-input></ion-input>
+    </div>
 
-  <div class="item-profile">
-    <ion-text>E-mail</ion-text>
-    <ion-input></ion-input>
-  </div>
+    <div class="item-profile">
+      <ion-text>E-mail</ion-text>
+      <ion-input></ion-input>
+    </div>
 
-  <div class="item-profile">
-    <ion-text>Phone</ion-text>
-    <ion-input></ion-input>
-  </div>
+    <div class="item-profile">
+      <ion-text>Phone</ion-text>
+      <ion-input></ion-input>
+    </div>
+
+  </form>
 
 </ion-content>

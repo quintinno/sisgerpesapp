@@ -6,7 +6,7 @@
       <ion-icon name="chevron-back-outline" routerLink="/setting"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="ion-text-center">Create</ion-title>
+    <ion-title class="ion-text-center">Cadastrar</ion-title>
 
     <ion-buttons slot="end" (click)="create()">
       <ion-icon name="save-outline"></ion-icon>
@@ -23,23 +23,17 @@
     <div class="container">
 
       <div class="item-profile">
-        <ion-text>Firt Name</ion-text>
-        <ion-input id="firtName" name="firtName" formControlName="firtName" maxlength="20"></ion-input>
+        <ion-text>Tipo de Pessoa</ion-text>
+        <ion-select>
+          <ion-select-option>Selecione</ion-select-option>
+          <ion-select-option>Pessoa Física</ion-select-option>
+          <ion-select-option>Pessoa Jurídica</ion-select-option>
+        </ion-select>
       </div>
 
       <div class="item-profile">
-        <ion-text>Last Name</ion-text>
-        <ion-input id="lastName" name="lastName" formControlName="lastName" maxlength="80"></ion-input>
-      </div>
-
-      <div class="item-profile">
-        <ion-text>E-mail</ion-text>
-        <ion-input id="email" name="email" formControlName="email" maxlength="40"></ion-input>
-      </div>
-
-      <div class="item-profile">
-        <ion-text>Phone</ion-text>
-        <ion-input id="phone" name="phone" formControlName="phone" mask="+55 (**) ***-***-***" maxlength="20" placeholder="+55 (XXX) YYY-YYY-YYY"></ion-input>
+        <ion-text>Nome</ion-text>
+        <ion-input id="nome" name="nome" maxlength="20"></ion-input>
       </div>
 
     </div>

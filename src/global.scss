@@ -8,6 +8,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "./theme/font.scss";
+
+* {
+    font-family: Raleway-Regular;
+}
 
 ion-header {
     ion-toolbar {
@@ -28,4 +33,8 @@ ion-header {
 ion-content {
     --background: var(--ion-color-pes);
     --color: var(--ion-color-pes-text-secondary);
+}
+
+ion-input {
+    font-family: Raleway-Medium !important;
 }

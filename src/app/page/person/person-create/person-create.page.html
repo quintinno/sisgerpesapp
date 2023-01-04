@@ -24,22 +24,22 @@
 
       <div class="item-profile">
         <ion-text>Firt Name</ion-text>
-        <ion-input></ion-input>
+        <ion-input id="firtName" name="firtName" formControlName="firtName" maxlength="20"></ion-input>
       </div>
 
       <div class="item-profile">
         <ion-text>Last Name</ion-text>
-        <ion-input></ion-input>
+        <ion-input id="lastName" name="lastName" formControlName="lastName" maxlength="80"></ion-input>
       </div>
 
       <div class="item-profile">
         <ion-text>E-mail</ion-text>
-        <ion-input></ion-input>
+        <ion-input id="email" name="email" formControlName="email" maxlength="40"></ion-input>
       </div>
 
       <div class="item-profile">
         <ion-text>Phone</ion-text>
-        <ion-input id="name" name="name" formControlName="phone" (ionInput)="onChangeFormatarPhone($event)" maxlength="19" placeholder="+55 (XXX) YYY-YYY-YYY"></ion-input>
+        <ion-input id="phone" name="phone" formControlName="phone" mask="+55 (**) ***-***-***" maxlength="20" placeholder="+55 (XXX) YYY-YYY-YYY"></ion-input>
       </div>
 
     </div>

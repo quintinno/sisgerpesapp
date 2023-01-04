@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-person-create',
@@ -10,6 +11,7 @@ export class PersonCreatePage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private alertController: AlertController
   ) { }
 
   ngOnInit() { }
@@ -23,12 +25,20 @@ export class PersonCreatePage implements OnInit {
 
   public create() {
     console.log("create....");
+    this.apresentarAlerta();
   }
 
-  public onChangeFormatarPhone(event: any) {
-    let numero = event.target.value;
-    // let numeroFormatado = event.target.value.replace(/\D/g, "-");
-    console.log(numero);
+  public async apresentarAlerta() {
+    const alert = await this.alertController.create({
+      header: 'Confirmação',
+      message: 'Dados Recebidos!',
+      buttons: [
+        {
+          text: 'OK',
+        },
+      ],
+    });
+    return await alert.present();
   }
 
 }

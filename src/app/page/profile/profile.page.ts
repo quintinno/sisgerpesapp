@@ -77,11 +77,8 @@ export class ProfilePage implements OnInit {
 
   private capturarFotoCamera() { }
 
-  private verificarImagemPerfil() {
-    if (this.imagemPerfil == undefined) {
-      this.imagemPerfil = "../../../assets/image/profile.jpg";
-      console.log("Imagem Perfil: ", this.imagemPerfil);
-    }
+  public verificarImagemPerfil() : Boolean {
+    return this.imagemPerfil == undefined;
   }
 
 }

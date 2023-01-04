@@ -21,8 +21,11 @@
   <form [formGroup]="formBuilderGroup">
 
     <div class="container-image" (click)="selecionarOpcoesImagem()">
-      <ion-avatar>
+      <ion-avatar *ngIf="!verificarImagemPerfil()">
         <ion-img [src]="imagemPerfil?.webPath"></ion-img>
+      </ion-avatar>
+      <ion-avatar *ngIf="verificarImagemPerfil()">
+        <ion-img src="../../../assets/image/profile.jpg"></ion-img>
       </ion-avatar>
       <div class="imagem-perfil">
         <ion-icon name="camera-reverse-outline"></ion-icon>

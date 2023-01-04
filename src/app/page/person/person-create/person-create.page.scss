@@ -45,7 +45,7 @@ ion-content {
         color: var(--ion-color-pes-text-primary);
         padding: 10px;
         margin-bottom: 10px;
-        ion-input {
+        ion-input, ion-select {
             color: var(--ion-color-primary-contrast);
             margin-left: -6px;
         }

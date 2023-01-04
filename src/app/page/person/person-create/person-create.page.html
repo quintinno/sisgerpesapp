@@ -22,18 +22,16 @@
 
     <div class="container">
 
-      <div class="item-profile">
+      <div class="item-profile" disabled="tipoPessoaList.length == 0">
         <ion-text>Tipo de Pessoa</ion-text>
-        <ion-select>
-          <ion-select-option>Selecione</ion-select-option>
-          <ion-select-option>Pessoa Física</ion-select-option>
-          <ion-select-option>Pessoa Jurídica</ion-select-option>
+        <ion-select id="tipoPessoa" name="tipoPessoa" formControlName="tipoPessoa">
+          <ion-select-option *ngFor="let item of tipoPessoaList" [value]="item.codigo">{{ item.descricao }}</ion-select-option>
         </ion-select>
       </div>
 
       <div class="item-profile">
         <ion-text>Nome</ion-text>
-        <ion-input id="nome" name="nome" maxlength="20"></ion-input>
+        <ion-input id="nome" name="nome" formControlName="nome" maxlength="20"></ion-input>
       </div>
 
     </div>

@@ -25,6 +25,8 @@
 
 :dart: Feature: Personlizar Template Cadastro de Pessoa
 
+:dart: Feature: Implementar Cadastro de Pessoa
+
 ## Anexos
 
 ![2023-01-03_18-49_1](https://user-images.githubusercontent.com/77560274/210447963-492101ad-d6ed-49c8-b48b-0bdd35872a81.png)

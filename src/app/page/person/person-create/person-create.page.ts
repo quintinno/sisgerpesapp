@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { PessoaService } from './../../../service/pessoa.service';
 
 @Component({
   selector: 'app-person-create',
@@ -9,29 +10,51 @@ import { AlertController } from '@ionic/angular';
 })
 export class PersonCreatePage implements OnInit {
 
+  public tipoPessoaList: any = [];
+
   constructor(
     private formBuilder: FormBuilder,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private pessoaService: PessoaService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.findAllTipoPessoa();
+  }
 
   public formBuilderGroup = this.formBuilder.group({
-    firtName: ["", [Validators.required] ],
-    lastName: ["", [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(3), Validators.maxLength(100)] ],
-    email: ["", [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(3), Validators.maxLength(100)] ],
-    phone: ["", [Validators.required, Validators.pattern('^\\d{10}$'), Validators.minLength(3), Validators.maxLength(100)] ],
+    tipoPessoa: ["", [Validators.required] ],
+    nome: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(100)] ],
   });
 
+  public findAllTipoPessoa() {
+    return this.pessoaService.findAllTipoPessoa().subscribe( response => {
+      this.tipoPessoaList = response;
+      console.log(this.tipoPessoaList);
+    });
+  }
+
   public create() {
-    console.log("create....");
-    this.apresentarAlerta();
+    this.pessoaService.saveOnePessoa(this.configurarPessoaRequestDTO()).subscribe( response => {
+      this.apresentarAlerta();
+      this.limparCampos();
+    });
+  }
+
+  private configurarPessoaRequestDTO() : any {
+    const pessoaRequestDTO = {
+      tipo: {
+        codigo: this.formBuilderGroup.controls["tipoPessoa"].value
+      },
+      nome: this.formBuilderGroup.controls["nome"].value
+    }
+    return pessoaRequestDTO;
   }
 
   public async apresentarAlerta() {
     const alert = await this.alertController.create({
       header: 'Confirmação',
-      message: 'Dados Recebidos!',
+      message: 'Pessoa Cadastrada com Sucesso!',
       buttons: [
         {
           text: 'OK',
@@ -39,6 +62,10 @@ export class PersonCreatePage implements OnInit {
       ],
     });
     return await alert.present();
+  }
+
+  private limparCampos() {
+    return this.formBuilderGroup.reset();
   }
 
 }

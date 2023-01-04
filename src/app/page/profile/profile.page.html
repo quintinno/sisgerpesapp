@@ -20,16 +20,13 @@
 
   <form [formGroup]="formBuilderGroup">
 
-    <div class="container">
-
-      <div class="container-profile">
-        <div class="profile-user-icon">
-          <ion-text>DQ</ion-text>
-        </div>
+    <div class="container-image" (click)="selecionarOpcoesImagem()">
+      <ion-avatar>
+        <ion-img [src]="imagemPerfil?.webPath"></ion-img>
+      </ion-avatar>
+      <div class="imagem-perfil">
+        <ion-icon name="camera-reverse-outline"></ion-icon>
       </div>
-      <ion-text>
-        Change profile picture
-      </ion-text>
     </div>
 
     <div class="item-profile">

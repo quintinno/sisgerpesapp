@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'person',
+    redirectTo: 'profile',
     pathMatch: 'full'
   },
   {
@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'person',
     loadChildren: () => import('./page/person/person.module').then( m => m.PersonPageModule)
   },
+  {
+    path: 'opcao-imagem',
+    loadChildren: () => import('./modal/opcao-imagem/opcao-imagem.module').then( m => m.OpcaoImagemPageModule)
+  },
+
 ];
 
 @NgModule({

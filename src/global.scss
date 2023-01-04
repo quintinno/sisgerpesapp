@@ -30,7 +30,7 @@ ion-header {
     }
 }
 
-ion-content {
+ion-content, ion-footer {
     --background: var(--ion-color-pes);
     --color: var(--ion-color-pes-text-secondary);
 }

@@ -17,6 +17,33 @@ ion-header {
 ion-content {
     --background: var(--ion-color-pes);
     --color: var(--ion-color-pes-text-secondary);
+    .container-image {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+        .imagem-perfil {
+            font-size: 22px;
+            background-color: var(--ion-color-pes-text-background-primary);
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 90px;
+            margin-top: 60px;
+        }
+    }
     .container {
         display: flex;
         flex-direction: column;
@@ -29,20 +56,28 @@ ion-content {
             font-size: 14px;
         }
         .container-profile {
-            background: var(--ion-color-pes-text-background-primary);
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            // opacity: 0.5;
+            opacity: 0.8;
+            margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
             .profile-user-icon {
-                // background: var(--ion-color-pes-text-background-primary);
                 ion-text {
                     font-size: 24px;
                     font-weight: bold;
                 }
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                max-width: 150px;
+                max-height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-size: 150px 150px;
             }
         }
     }

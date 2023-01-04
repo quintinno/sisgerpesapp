@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { PessoaService } from './../../../service/pessoa.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class PersonCreatePage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private alertController: AlertController,
-    private pessoaService: PessoaService
+    private pessoaService: PessoaService,
+    private loadingController: LoadingController
   ) { }
 
   ngOnInit() {
@@ -36,8 +37,11 @@ export class PersonCreatePage implements OnInit {
 
   public create() {
     this.pessoaService.saveOnePessoa(this.configurarPessoaRequestDTO()).subscribe( response => {
-      this.apresentarAlerta();
-      this.limparCampos();
+      this.showLoading();
+      setTimeout(() => {
+        this.apresentarAlerta();
+        this.limparCampos();
+      }, 2000);
     });
   }
 
@@ -62,6 +66,13 @@ export class PersonCreatePage implements OnInit {
       ],
     });
     return await alert.present();
+  }
+
+  public async showLoading() {
+    const loading = await this.loadingController.create({
+      duration: 2000,
+    });
+    loading.present();
   }
 
   private limparCampos() {

@@ -26,9 +26,9 @@ export class PersonCreatePage implements OnInit {
   }
 
   public onChangeFormatarPhone(event: any) {
-    let numeroFormatado = event.target.value.replace(/\D/g, "");
-    this.formBuilderGroup.controls['phone'].patchValue(numeroFormatado);
-    console.log(numeroFormatado);
+    let numero = event.target.value;
+    // let numeroFormatado = event.target.value.replace(/\D/g, "-");
+    console.log(numero);
   }
 
 }
